@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+    --primary-color: #3B82F6;
+    --secondary-color: #60A5FA;
+    margin: 0 auto;
+
+}
+
+body {
+    font-family: "Nunito Sans", serif;
+    /* line-height: 1.5; */
+    /* @apply text-gray-800 bg-gray-50; */
+    margin: 0 auto;
+
+}
+
+/* Custom utility classes */
+.container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 
+           transition-colors duration-200 ease-in-out;
+}
+
+.card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden p-6;
+} 
+
+ 
+
+.nunito-sans {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+   
+  }
+  
+  .bg-section {
+    background-image: url('../assets/fon.svg'); /* Путь к изображению */
+    background-size: cover; /* Это делает изображение адаптированным по размеру */
+    background-position: center; /* Центрирует изображение */
+    height: 100%; /* Задайте высоту, чтобы секция занимала весь экран */
+}
