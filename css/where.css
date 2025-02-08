@@ -1,10 +1,14 @@
 .bg-section {
     background-image: url('../assets/fon.svg'); /* Путь к изображению */
-    background-size: cover; /* Это делает изображение адаптированным по размеру */
+    background-size: contain; /* Это делает изображение адаптированным по размеру */
     background-position: center; /* Центрирует изображение */
     height: 100%; /* Задайте высоту, чтобы секция занимала весь экран */
 }
 
-/* .container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
-} */
+ 
+.nunito-sans {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+   
+  }

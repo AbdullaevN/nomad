@@ -13,21 +13,17 @@
 
 body {
     font-family: "Nunito Sans", serif;
-    /* line-height: 1.5; */
-    /* @apply text-gray-800 bg-gray-50; */
+   
     margin: 0 auto;
 
 }
 
-/* Custom utility classes */
-.container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
-}
+ 
 
-.btn-primary {
+/* .btn-primary {
     @apply bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 
            transition-colors duration-200 ease-in-out;
-}
+} */
 
 .card {
     @apply bg-white rounded-xl shadow-md overflow-hidden p-6;
@@ -44,7 +40,25 @@ body {
   
   .bg-section {
     background-image: url('../assets/fon.svg'); /* Путь к изображению */
-    background-size: cover; /* Это делает изображение адаптированным по размеру */
+    background-size: contain; /* Это делает изображение адаптированным по размеру */
     background-position: center; /* Центрирует изображение */
     height: 100%; /* Задайте высоту, чтобы секция занимала весь экран */
 }
+
+
+.truncate-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Число строк, до которых нужно обрезать */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
