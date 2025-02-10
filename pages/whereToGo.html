@@ -29,8 +29,12 @@
     
     <!-- Header -->
     <header class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <img src="../assets/logo-b.png" alt="Logo" class="w-28 sm:w-36">
-        <img src="../assets/burger.png" alt="Burger" class="w-8 sm:w-10" id="burger">
+
+<a href="../index.html">
+  <img src="../assets/logo-b.png" alt="Logo" class="w-28 sm:w-36">
+</a>
+
+      <img src="../assets/burger.png" alt="Burger" class="w-8 sm:w-10 cursor-pointer" id="burger" >
     </header>
     
 
@@ -46,15 +50,15 @@
 
         </button>
         <ul class="mt-16 mb-7 space-y-4 text-base font-[600] text-start mx-10">
-            <li><a href="#" class="block py-2">Главная</a></li>
+            <li><a href="../index.html" class="block py-2">Главная</a></li>
             <li><a href="#" class="block py-2">Карта</a></li>
-            <li><a href="#" class="block py-2">Куда поехать?</a></li>
+            <li><a href="../index.html" class="block py-2">Куда поехать?</a></li>
             <li><a href="#" class="block py-2">Отзывы</a></li>
         </ul>
         <div class="flex gap-4 text-start mx-10 ">
           <!-- Кнопка Войти -->
           <button class="bg-white border border-gray-300 text-gray-800 px-4 py-1 rounded-lg font-sm text-sm">
-              Войти
+              <a href="./signIn.html">Войти</a>
           </button>
       
            <button class="flex justify-between">
@@ -163,17 +167,21 @@
     <footer class="bg-[#3C5574] text-white py-6 text-center">
         <div class="flex flex-col md:items-center items-start gap-4 md:px-1 px-7">
            <div class="md:flex hidden">
+           <a href="../index.html">
             <img class="w-32" src="../assets/logo-w.png" alt="Logo">
+           </a>
            </div>
            <div class="md:hidden">
-            <img class="w-22" src="../assets/mobLogo.png" alt="Logo">
+            <a href="../index.html">
+              <img class="w-22" src="../assets/mobLogo.png" alt="Logo">
+            </a>
            </div>
 
 
             <ul class="flex gap-2 md:gap-6 text-base md:text-sm sm:text-base flex-col md:flex-row text-start md:w-fit w-full">
-                <li>Главная</li>
+                <li><a href="../index.html">Главная</a> </li>
                 <li>Карта</li>
-                <li>Куда поехать?</li>
+                <li> <a href="./whereToGo.html">Куда поехать?</a> </li>
                 <li>Отзывы</li>
             </ul>
             <div class="flex gap-6">

@@ -21,14 +21,16 @@
 <body class="min-h-screen bg-section ">
     <section class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center text-center py-5">
+          <a href="../index.html">
             <img src="../assets/logo-b.png" alt="Logo">
-            <img src="../assets/burger.png" alt="Burger" id="burger">
+          </a>
+          <img src="../assets/burger.png" alt="Burger" id="burger" class="cursor-pointer">
         </div>
     </section>
 
       <!-- Боковое меню -->
       <div id="sidebar" class="fixed top-0 right-0 z-10 w-full md:w-[20%]  h-full bg-[#3C5574] text-white shadow-lg transform translate-x-full transition-transform duration-300">
-        <button id="closeSidebar" class="absolute top-4 right-4 text-2xl font-bold">
+        <button id="closeSidebar" class="absolute top-4 right-4 text-2xl font-bold cursor-pointer">
           <!-- &times; -->
           <svg width="20" height="20" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line x1="0.722642" y1="1.30878" x2="22.7226" y2="24.3088" stroke="white" stroke-width="2"/>
@@ -40,14 +42,16 @@
         <ul class="mt-16 mb-7 space-y-4 text-base font-[600] text-start mx-10">
             <li><a href="../index.html" class="block py-2">Главная</a></li>
             <li><a href="#" class="block py-2">Карта</a></li>
-            <li><a href="#" class="block py-2">Куда поехать?</a></li>
+            <li><a href="./whereToGo.html" class="block py-2">Куда поехать?</a></li>
             <li><a href="#" class="block py-2">Отзывы</a></li>
         </ul>
         <div class="flex gap-4 text-start mx-10 ">
           <!-- Кнопка Войти -->
           <button class="bg-white border border-gray-300 text-gray-800 px-4 py-1 rounded-lg font-sm text-sm">
-              Войти
-          </button>
+            <a href="./signIn.html" class="">
+            Войти
+          </a>
+        </button>
       
            <button class="flex justify-between">
             <div class="flex items-center gap-2 border border-gray-300 rounded-lg px-3 py-1 bg-white cursor-pointer">
@@ -87,7 +91,7 @@
           <input type="password" placeholder="Пароль" class="w-full p-3 mb-4 border border-[#D4D4D4] rounded-xl focus:outline-none" />
           
           <!-- Ссылка для забытого пароля -->
-          <span class="text-[#68717B] text-xs mb-4 block text-end">Забыли пароль?</span>
+          <span class="text-[#68717B] text-xs mb-4 block text-end"> <a href="./forgotPass.html">Забыли пароль?</a> </span>
           
           <!-- Кнопка входа -->
           <button class="w-full p-3 mb-4 bg-[#415471] text-white rounded-lg transition hover:bg-[#344B5D] focus:outline-none">
@@ -115,7 +119,10 @@
           <!-- Ссылка на регистрацию -->
           <div class="text-center text-[#68717B]">
             Нет аккаунта? 
+                <a href="./signUp.html">
             <button class="text-[#605DEC] font-semibold">Регистрация</button>
+
+                </a>
           </div>
         </div>
       </section>
@@ -127,17 +134,23 @@
    <footer class="bg-[#3C5574] text-white py-6 text-center">
     <div class="flex flex-col md:items-center items-start gap-4 md:px-1 px-7">
        <div class="md:flex hidden">
-        <img class="w-32" src="../assets/logo-w.png" alt="Logo">
+        <a href="../index.html">
+          <img class="w-32" src="../assets/logo-w.png" alt="Logo">
+        </a>
        </div>
        <div class="md:hidden">
+      <a href="../index.html">
         <img class="w-22" src="../assets/mobLogo.png" alt="Logo">
+      </a>
        </div>
 
 
         <ul class="flex gap-2 md:gap-6 text-base md:text-sm sm:text-base flex-col md:flex-row text-start md:w-fit w-full">
-            <li>Главная</li>
+            <a href="../index.html"><li>Главная</li>
+            </a>
             <li>Карта</li>
-            <li>Куда поехать?</li>
+            <a href="./whereToGo.html"><li>Куда поехать?</li>
+            </a>
             <li>Отзывы</li>
         </ul>
         <div class="flex gap-6">
