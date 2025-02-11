@@ -30,8 +30,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.bg-section_item {
+    background-image: url('../assets/fon.svg'); /* Путь к изображению */
+    background-size: contain; /* Это делает изображение адаптированным по размеру */
+    background-position: center; /* Центрирует изображение */
+    height: 100%; /* Задайте высоту, чтобы секция занимала весь экран */
+    /* opacity: 0.3; */
+}
 </style>
-<body class="min-h-screen bg-section ">
+<body class="min-h-screen   bg-section ">
     <section class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center text-center py-5">
             <a href="../index.html"><img src="../assets/logo-b.png" alt="Logo"></a>
@@ -150,33 +157,30 @@
         <div class="w-full">
           <img src="../assets/item/big.png" alt="Big Image" class="w-full h-auto object-cover rounded-lg">
         </div>
-        
         <!-- Меньшие изображения с кнопками -->
-        <div class="flex justify-between items-center gap-4">
+        <div class="flex items-center gap-4">
           <!-- Кнопка для прокрутки влево -->
-          <button class="hidden md:flex bg-[#3C5574] text-white p-3 rounded-full">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 19L5 12M5 12L12 5M5 12H19" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <button id="scrollLeft" class="hidden md:flex bg-[#3C5574] text-white p-3 rounded-full">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 19L5 12M5 12L12 5M5 12H19" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              
           </button>
-    
-          <!-- 4 миниатюрных изображения -->
-          <div class="flex gap-4 w-full overflow-x-auto justify-between items-center  scroll-smooth scrollbar-hidden">
-            <img src="../assets/item/small1.png" alt="Thumbnail 1" class="w-auto h-auto object-cover rounded-lg shadow-md">
-            <img src="../assets/item/small2.png" alt="Thumbnail 2" class="w-auto h-auto object-cover rounded-lg shadow-md">
-            <img src="../assets/item/small2.png" alt="Thumbnail 3" class="w-auto h-auto object-cover rounded-lg shadow-md">
-            <img src="../assets/item/small2.png" alt="Thumbnail 4" class="w-auto h-auto object-cover rounded-lg shadow-md">
+      
+          <!-- Контейнер изображений -->
+          <div id="imageContainer" class="flex gap-4 w-full overflow-x-auto scroll-smooth scrollbar-hidden">
+              <img src="../assets/item/small1.png" alt="Thumbnail 1" class="w-auto h-auto object-cover rounded-lg shadow-md">
+              <img src="../assets/item/small2.png" alt="Thumbnail 2" class="w-auto h-auto object-cover rounded-lg shadow-md">
+              <img src="../assets/item/small2.png" alt="Thumbnail 3" class="w-auto h-auto object-cover rounded-lg shadow-md">
+              <img src="../assets/item/small2.png" alt="Thumbnail 4" class="w-auto h-auto object-cover rounded-lg shadow-md">
           </div>
-    
+      
           <!-- Кнопка для прокрутки вправо -->
-          <button class="hidden md:flex bg-[#3C5574] text-white p-3 rounded-full">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <button id="scrollRight" class="hidden md:flex bg-[#3C5574] text-white p-3 rounded-full">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#F9FAFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              
           </button>
-        </div>
+      </div>
       </div>
 
 
@@ -210,7 +214,7 @@
     
 
       <div id="modal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50 ">
-        <div class="bg-[#415471] p-6 rounded-xl w-4/12">
+        <div class="bg-[#415471] p-6 rounded-xl md:w-4/12 w-full m-4 sm:w-6/12">
         <div class="flex justify-between items-start text-start ">
           <h2 class="text-lg font-semibold mb-4 text-white">Поделиться</h2>
           <button id="closeModal" class="text-start justify-start flex text-[#3B4C66]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -476,16 +480,16 @@
 
    <!-- Footer -->
    <footer class="bg-[#3C5574] text-white py-6 text-center">
-    <div class="flex flex-col md:items-center items-start gap-4 md:px-1 px-7">
+    <div class="flex flex-col md:items-center items-center gap-4 md:px-1 px-7">
        <div class="md:flex hidden">
         <a href="../index.html"><img class="w-32" src="../assets/logo-w.png" alt="Logo"></a>
        </div>
        <div class="md:hidden">
-        <a href="../index.html"><img class="w-22" src="../assets/mobLogo.png" alt="Logo"></a>
+        <a href="../index.html"><img class="w-22" src="../assets/logo-w.png" alt="Logo"></a>
        </div>
 
 
-        <ul class="flex gap-2 md:gap-6 text-base md:text-sm sm:text-base flex-col md:flex-row text-start md:w-fit w-full">
+        <ul class="flex gap-2 md:gap-6 text-base md:text-sm sm:text-base flex-col md:flex-row text-center md:w-fit w-full">
             <li><a href="../index.html">Главная</a> </li>
             <li>Карта</li>
             <li><a href="./whereToGo.html">Куда поехать?</a> </li>
@@ -602,8 +606,6 @@
   });
 </script>
 
-
-
 <!-- Скрипт для модалки и копирования -->
 <script>
   // Получаем элементы
@@ -649,22 +651,47 @@ cards.forEach(card => {
     cardElement.classList.add('bg-white', 'rounded-xl', 'shadow-lg', 'overflow-hidden');
     
     cardElement.innerHTML = `
-<img src="${card.image}" alt="${card.title}" class="w-full h-40 sm:h-48 object-cover rounded-t-xl">
-<div class="p-4">
-<h3 class="text-lg sm:text-xl font-semibold mb-2">${card.title}</h3>
-<p class="card-description text-gray-600 text-sm sm:text-base mb-3">${card.description}</p>
-<hr class="bg-gray-300 h-0.5  mx-auto mb-3">
-<div class="flex justify-between items-center">
-    <button class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-sm">${card.buttonText}</button>
-    <span class="text-gray-500 text-sm">${card.date}</span>
-</div>
-</div>
+  <a href="${card.link}" class="block">
+    <img src="${card.image}" alt="${card.title}" class="w-full h-40 sm:h-48 object-cover rounded-t-xl">
+  </a>
+  <div class="p-4">
+    <a href="${card.link}">
+      <h3 class="text-lg sm:text-xl font-semibold mb-2">${card.title}</h3>
+    </a>
+    <p class="card-description text-gray-600 text-sm sm:text-base mb-3">${card.description}</p>
+    <hr class="bg-gray-300 h-0.5 mx-auto mb-3">
+    <div class="flex justify-between items-center">
+      <button class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-sm">${card.buttonText}</button>
+      <span class="text-gray-500 text-sm">${card.date}</span>
+    </div>
+  </div>
 `;
+
 
     cardsGrid.appendChild(cardElement);
 });
 
 </script>
 
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("imageContainer");
+      const scrollLeft = document.getElementById("scrollLeft");
+      const scrollRight = document.getElementById("scrollRight");
+
+      const scrollAmount = 200; // Прокрутка на 200 пикселей
+
+      scrollLeft.addEventListener("click", function () {
+          container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+
+      scrollRight.addEventListener("click", function () {
+          container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+  });
+</script>
 </body>
 </html>

@@ -6,6 +6,17 @@
     /* opacity: 0.3; */
 }
 
+
+@media(min-width:480px){
+
+  .bg-section{
+    background-image: url('../assets/fon.svg'); /* Путь к изображению */
+    background-size: contain; /* Это делает изображение адаптированным по размеру */
+    background-position: center; /* Центрирует изображение */
+    height: 100%; /* Задайте высоту, чтобы секция занимала весь экран */
+    /* opacity: 0.3; */
+  }
+}
  
 .nunito-sans {
     font-optical-sizing: auto;

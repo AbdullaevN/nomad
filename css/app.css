@@ -178,37 +178,76 @@ body {
 
  
 
-@keyframes logoMove {
+
+
+
+
+
+
+
+
+
+
+
+/* @keyframes logoMove {
     0% { 
-        transform: translate(0, 0); 
-        opacity: 1; 
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
     }
     50% { 
-        transform: translate(0, 0); /* Оставляем в центре */
+        transform: translateX(0) translateY(0) scale(1);
     }
     100% { 
-        transform: translate(-550px, -270px) scale(0.8); /* Движение в левый верхний угол */
+        transform: translateX(-520px) translateY(-270px) scale(0.8);
     }
 }
 
-/* Медиазапросы для адаптивного логотипа */
-@media (max-width: 1024px) {
-    @keyframes logoMove {
-        0% { transform: translate(0, 0); opacity: 1; }
-        100% { transform: translate(-300px, -150px) scale(0.8); } /* Подгоняем под планшеты */
+.logo {
+    will-change: transform;
+} */
+@keyframes logoMove {
+    0% { 
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% { 
+        transform: translate3d(
+            calc(-50vw + 20px),  /* Фиксируем отступ от левого края */
+            calc(-50vh + 20px),  /* Фиксируем отступ от верхнего края */
+            0
+        ) scale(0.8);
     }
 }
 
-@media (max-width: 768px) {
-    @keyframes logoMove {
-        0% { transform: translate(0, 0); opacity: 1; }
-        100% { transform: translate(-150px, -80px) scale(0.7); } /* Для мобильных уменьшенный сдвиг */
+.logo {
+    will-change: transform;
+    /* Гарантия позиционирования в углу на всех экранах */
+    position: fixed;
+    top: 10px;
+    left: 70px;
+    /* Сбрасываем стандартную трансформацию после анимации */
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes logoMove {
+    0% { 
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% { 
+        transform: translate3d(-20px, -70px, 0) scale(0.8);
     }
 }
 
-@media (max-width: 480px) {
-    @keyframes logoMove {
-        0% { transform: translate(0, 0); opacity: 1; }
-        100% { transform: translate(-100px, -290px) scale(0.6); } /* Для маленьких экранов */
+@keyframes logoMove {
+    0% { 
+        -webkit-transform: translate3d(0, 0, 0) scale(1);
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% { 
+        -webkit-transform: translate3d(-50px, -70px, 0) scale(0.8);
+        transform: translate3d(-600px, -340px, 0) scale(0.8);
     }
 }
+
+
+ 

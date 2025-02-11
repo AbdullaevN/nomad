@@ -16,6 +16,14 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
+
+  
+
+
+    <!-- Подключаем Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   </head>
 
   <style>
@@ -27,35 +35,26 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+
+    .map-container {
+    height: 50vh;
+  }
+  
+  /* Фон для загрузки карты */
+  .leaflet-container {
+    background: #f0f2f5 !important;
+  }
   </style>
+  
+
+
+
 
  
 
   <body class=" h-full relative bg-section">
-    <!-- Main Content -->
-    <!-- <main class="flex items-center justify-center text-center h-auto">
-      <section
-        class="bg-[#3C5574] h-full w-full flex flex-col justify-center items-center"
-      >
-         <div class="my-72">
-          <img
-            src="./assets/logo-w.png"
-            class="w-[150px] h-auto"
-            alt="Nomad Logo"
-          />
-    <img src="../assets/burger.png" alt="Burger" class="w-8 sm:w-10" id="burger">
-
-        </div>
-         <p class="text-white max-w-full px-18 pb-18 text-[33px] text-start">
-          <strong>Nomad.kg</strong> — это уникальный некоммерческий проект для
-          тех, кто жаждет открытий, приключений и вдохновения. Мы не продаем
-          туры и сувениры, мы дарим вам главное — знания и идеи для незабываемых
-          путешествий по Кыргызстану.
-        </p>
-      </section>
-    </main> -->
-
-    
+  
 
 
 
@@ -96,8 +95,8 @@
 
   <!-- Основной контент (без изменений) -->
   <main class="bg-[#3C5574]">
-      <section class=" mx-auto px-14 py-20">
-          <p class="text-white text-[33px] text-start">
+      <section class=" mx-auto px-12 md:px-14 py-20">
+          <p class="text-white  text-xl  md:text-[33px] text-start">
               <strong>Nomad.kg</strong> — это уникальный некоммерческий проект для
               тех, кто жаждет открытий, приключений и вдохновения. Мы не продаем
               туры и сувениры, мы дарим вам главное — знания и идеи для незабываемых
@@ -197,12 +196,16 @@
     </div>
 
     <!-- Область с картой -->
-    <!-- <div class="map-area w-full h-screen relative z-0">
-        <img src="./assets/Basemap.png" class="map-image w-full h-full object-cover rounded-xl" alt="Интерактивная карта">
-    </div> -->
-    <div class="map-area w-full h-screen relative z-0">
-      <img src="./assets/Basemap.png" class="map-image w-full h-full object-cover rounded-xl" alt="Интерактивная карта">
   
+    <!-- <div class="map-area w-full h-screen relative z-0"> -->
+      <!-- <img src="./assets/Basemap.png" class="map-image w-full h-full object-cover rounded-xl" alt="Интерактивная карта"> -->
+      <div class="map-area w-full h-screen relative z-0">
+        <!-- Контейнер для карты -->
+        <div id="map" class="map-container w-full h-full rounded-xl"></div>
+      
+  
+
+
      <!-- Контейнер кнопок управления -->
 <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end  pb-22 px-3 rounded-lg  ">
 
@@ -384,11 +387,15 @@
 
  
     <!-- Otzyv -->
-    <section class="bg-[#3C5574] mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="max-w-screen-xl mx-auto">
-          <h2 class="text-white text-3xl font-bold text-start mb-6">
-            Отзывы о наших маршрутах
-          </h2>
+    <section class=" bg-[#3C5574] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class=" container mx-auto">
+       
+          <div class="flex  text-center items-center items-baseline">
+            <h2 class=" text-white text-3xl font-bold text-start mb-6 px-12">
+              Отзывы о наших маршрутах
+            </h2>
+            <button class="bg-white px-3 py-2 rounded-xl text-sm">Смотреть все отзывы</button>
+          </div>
       
           <div class="relative flex items-center ">
             <!-- Контейнер для отзывов с горизонтальным скроллом -->
@@ -397,6 +404,8 @@
 
 
         <div class="flex flex-wrap gap-6 w-full justify-center scrollbar-hide">
+          
+      
           <!-- Отзыв 1 -->
     
               <div class="bg-white md:rounded-4xl rounded-2xl md:p-4 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[40%] lg:w-[30%]">
@@ -514,16 +523,13 @@
 </div>
        
       </div>
-      
-      
-            <!-- Кнопка для пролистывания отзывов -->
-            <button
+             <!-- <button
               class="
               hidden md:flex
               absolute right-[-10px] md:right-[-19px] h-10 w-10 bg-white p-3 flex justify-center items-center rounded-full shadow-md hover:bg-gray-100 transition"
             >
               <img src="./assets/where/right.svg" alt="" />
-            </button>
+            </button> -->
           </div>
         </div>
       </section>
@@ -531,23 +537,33 @@
 
  <!-- Footer -->
  <footer class="bg-[#3C5574] text-white py-6 text-center">
-  <div class="flex flex-col md:items-center items-start gap-4 md:px-1 px-7">
+  <div class="flex flex-col md:items-center items-center gap-4 md:px-1 px-7">
      <div class="md:flex hidden">
      <a href="./index.html"> <img class="w-32" src="./assets/logo-w.png" alt="Logo"></a>
      </div>
      <div class="md:hidden">
       <a href="./index.html">
-        <img class="w-22" src="./assets/mobLogo.png" alt="Logo">
+        <img class="w-22" src="./assets/logo-w.png" alt="Logo">
       </a>
      </div>
 
 
-      <ul class="flex gap-2 md:gap-6 text-base md:text-sm sm:text-base flex-col md:flex-row text-start md:w-fit w-full">
+     <ul class="flex gap-2 md:gap-6 text-base md:text-sm sm:text-base flex-col md:flex-row text-center md:w-fit w-full">
+      <a href="#" class="transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-blue-200">
           <li>Главная</li>
+      </a>
+      <a href="#" class="transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-blue-200">
           <li>Карта</li>
-          <a href="./pages/whereToGo.html"><li>Куда поехать?</li></a>
+      </a>
+      <a href="./pages/whereToGo.html" class="transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-blue-200">
+          <li>Куда поехать?</li>
+      </a>
+      <a href="#" class="transition-all duration-300 ease-in-out transform hover:scale-105 hover:text-blue-200">
           <li>Отзывы</li>
-      </ul>
+      </a>
+  </ul>
+  
+  
       <div class="flex gap-6">
           <a href="#" target="_blank">
             <svg
@@ -817,6 +833,47 @@
 
     window.addEventListener("resize", updateFilterWidth);
     updateFilterWidth();
+</script>
+
+
+<script>
+  // Координаты Бишкека [широта, долгота]
+  const bishkekCoords = [42.8746, 74.5698];
+  const initialZoom = 12;
+
+  // Инициализация карты
+  const map = L.map('map').setView(bishkekCoords, initialZoom);
+
+  // Выберите один из стилей:
+  
+  // 1. Стиль Voyager (CartoDB)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    subdomains: 'abcd',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+
+  // 2. Стиль Alidade (Stadia Maps)
+  /*
+  L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+  */
+
+  // 3. Классический OpenStreetMap
+  /*
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+  */
+
+  // Добавляем маркер центра Бишкека
+  L.marker(bishkekCoords)
+    .addTo(map)
+    .bindPopup('<b>Бишкек</b><br>Столица Кыргызстана')
+    .openPopup();
 </script>
 
 <script src="./js/burger.js"></script>
