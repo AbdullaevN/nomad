@@ -124,8 +124,8 @@ body {
     .hero-bg {
         top: 25%;
         left: 10px;
-        min-height: 150%;
-        max-height: 115%;
+        min-height: 220%;
+        /* max-height: 115%; */
         /* z-index: 40/ */
         object-fit: contain;
 
