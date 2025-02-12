@@ -11,8 +11,7 @@
 
 }
 
-/* Reset default styles */
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -37,16 +36,16 @@ body {
   }
   
   .bg-section {
-    background-image: url('../assets/fon.svg'); /* Путь к изображению */
-    background-size: contain; /* Это делает изображение адаптированным по размеру */
-    background-position: center; /* Центрирует изображение */
-    height: 100%; /* Задайте высоту, чтобы секция занимала весь экран */
+    background-image: url('../assets/fon.svg'); 
+    background-size: contain;  
+    background-position: center; 
+    height: 100%;  
 }
 
 
 .truncate-text {
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Число строк, до которых нужно обрезать */
+    -webkit-line-clamp: 3;  
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -78,8 +77,7 @@ body {
 }
 
 
-/* Hero Section */
-.hero-section {
+ .hero-section {
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -90,15 +88,14 @@ body {
     padding-top: 20%;
 }
 
-/* Background */
-.hero-bg {
+ .hero-bg {
     position: absolute;
-    top: -10%; /* Сдвигаем фон вниз */
+    top: -10%; 
     left: 0;
     width: 100%;
-    min-height: 110%; /* Чуть увеличиваем высоту, чтобы не обрезалось */
+    min-height: 110%;  
     background-image: url('../assets/group.png');
-    background-size: cover; /* Делаем так, чтобы фон заполнял всю ширину */
+    background-size: cover;  
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
@@ -110,12 +107,40 @@ body {
 
 
 
-/* Адаптивные стили */
-@media (max-width: 1024px) {
+
+@media (min-width: 2000px) {
+    .hero-bg {
+        top: 15%;
+        left: 10px;
+        min-height: 105%;
+        /* max-height: 95%; */
+        /* z-index: 40/ */
+        object-fit: contain;
+
+    }
+}
+
+@media (max-width: 2024px) {
+    .hero-bg {
+        top: 25%;
+        left: 10px;
+        min-height: 150%;
+        max-height: 115%;
+        /* z-index: 40/ */
+        object-fit: contain;
+
+    }
+}
+
+
+
+ @media (max-width: 1024px) {
     .hero-bg {
         top: 35%;
         left: 10px;
-        min-height: 65%;
+        min-height: 100%;
+        /* z-index: 9999; */
+
     }
 }
 
@@ -123,15 +148,18 @@ body {
     .hero-bg {
         top: 30%;
         left: 5px;
-        min-height: 70%;
+        min-height: 100%;
+        /* z-index: 9999; */
     }
 }
 
 @media (max-width: 480px) {
     .hero-bg {
-        top: 25%;
+        top: 30%;
         left: 0;
-        min-height: 75%;
+        min-height: 105%;
+        /* z-index: 9999; */
+
     }
 }
 
@@ -139,8 +167,7 @@ body {
     opacity: 0.9;
 }
 
-/* Overlay Gradient */
-.hero-section::before {
+ .hero-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -156,8 +183,7 @@ body {
     animation: fadeIn 1s ease-out;
 }
 
-/* Ken Burns Effect */
-@keyframes kenburns {
+ @keyframes kenburns {
     0% {
         transform: scale(1);
     }
@@ -166,8 +192,7 @@ body {
     }
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
+ @keyframes fadeIn {
     from {
         opacity: 0;
     }
@@ -205,27 +230,38 @@ body {
 .logo {
     will-change: transform;
 } */
+/* 
+:root {
+    --logo-size: 150px; 
+    --offset-x: calc(50vw - 80px);  
+    --offset-y: calc(50vh - 80px); 
+}
+
 @keyframes logoMove {
     0% { 
-        transform: translate3d(0, 0, 0) scale(1);
+        transform: translate(-50%, -50%) scale(1);  
     }
     100% { 
-        transform: translate3d(
-            calc(-50vw + 20px),  /* Фиксируем отступ от левого края */
-            calc(-50vh + 20px),  /* Фиксируем отступ от верхнего края */
-            0
-        ) scale(0.8);
+        transform: translate(calc(-1 * var(--offset-x)), calc(-1 * var(--offset-y))) scale(0.8);
     }
 }
 
 .logo {
     will-change: transform;
-    /* Гарантия позиционирования в углу на всех экранах */
     position: fixed;
-    top: 10px;
-    left: 70px;
-    /* Сбрасываем стандартную трансформацию после анимации */
-    animation-fill-mode: forwards;
+    top: 50%;
+    left: 50%;
+    width: var(--logo-size);
+    height: auto;
+    animation: logoMove 1.5s forwards;
+    animation-delay: 0.8s;
+}
+
+ @media (max-width: 768px) {
+    :root {
+        --offset-x: calc(50vw - 50px);
+        --offset-y: calc(50vh - 50px);
+    }
 }
 
 
@@ -250,4 +286,4 @@ body {
 }
 
 
- 
+  */
