@@ -38,20 +38,17 @@
 
 
     .map-container {
-    height: 50vh;
+    height: 80vh;
   }
   
-  /* Фон для загрузки карты */
-  .leaflet-container {
+   .leaflet-container {
     background: #f0f2f5 !important;
   }
 
   button:hover{
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
-    /* background-color: #abb6c6; */
-    /* transform: translateY(-1px); */
-    /* transform: scale(1.02); */
+
     box-shadow: 0 4px 6px -1px rgba(160, 37, 37, 0.1);
 
 
@@ -89,31 +86,23 @@
 
 
     <div class="hero-section ">
-      <!-- Фон гор -->
-      <div class="hero-bg"></div>
+       <div class="hero-bg"></div>
+ 
 
-      <!-- Логотип -->
-    <!-- <img src="./assets/logo-w.png" 
-     alt="Nomad Logo"
-     class="absolute inset-0 m-auto w-[150px] h-auto logo "
-     style="animation: logoMove 1.5s forwards; animation-delay: 0.8s;  "
-     > -->
-
-
-      <!-- Центральный текст -->
-      <div class="absolute inset-0 flex items-center justify-center z-50">
+       <div class="absolute inset-0 flex items-center justify-center z-50">
           <h1 class="text-white text-4xl md:text-6xl font-bold text-center opacity-0"
               style="animation: titleAppear 1s forwards; animation-delay: 1.5s;">
               Nomad - проложи свой путь<br>к путешествию
           </h1>
       </div>
 
+     <div class="">
       <img src="./assets/logo-w.png" 
       alt="Nomad Logo"
-      class="absolute  absolute w-[30%] md:w-[11%] top-6 left-6 z-50"
+      class="absolute w-[30%] md:w-[11%] top-6 left-6 z-50 fixed"
       >
       <!-- Бургер-меню -->
-      <button class="absolute top-6 right-6 z-50"
+      <button class="absolute top-6 right-6 z-50 fixed"
               style="animation: burgerEnter 0.8s forwards; animation-delay: 2s;">
               <svg alt="Burger" class="w-8 sm:w-10" id="burger" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="6" cy="6" r="6" fill="white"/>
@@ -121,10 +110,8 @@
                 <circle cx="6" cy="24" r="6" fill="white"/>
                 <circle cx="24" cy="24" r="6" fill="white"/>
                 </svg>
-                
-              <!-- <img src="./assets/burger.png" alt="Burger" class="w-8 sm:w-10" id="burger"> -->
-
       </button>
+     </div>
   </div>
 
   <!-- Основной контент (без изменений) -->
@@ -143,7 +130,7 @@
  
 
 
-  <div id="sidebar" class="fixed top-0 right-0 z-100 w-full md:w-[20%]  h-full bg-[#3C5574] text-white shadow-lg transform translate-x-full transition-transform duration-300">
+  <div id="sidebar" class="fixed top-0 right-0 z-100 w-full md:w-[100%]  h-full bg-[#3C5574] text-white shadow-lg transform translate-x-full transition-transform duration-300">
     <button id="closeSidebar" class="absolute top-4 right-4 text-2xl font-bold" style="z-index: 100;">
       <!-- &times; -->
       <svg width="20" height="20" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,7 +200,7 @@
         </button>
 
         <!-- Фильтры -->
-        <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full max-w-[80vw] md:max-w-[65vw] lg:max-w-[60vw] px-2">
+        <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full max-w-[80vw] md:max-w-[65vw] lg:max-w-[60vw] px-2 ">
         </div>
  
         <!-- Кнопка вперед -->
@@ -258,7 +245,7 @@
     
 
     <section class="hidden md:block container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h2 class="flex text-start  text-2xl md:text-[48px] font-[800] mb-6 text-[#415471]">
+      <h2 class="flex text-start  text-2xl md:text-[37px] font-[800] mb-6 text-[#415471]">
         Начни свое путешествие отсюда!
       </h2>
 
@@ -305,6 +292,9 @@
 
 
     <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-5">
+      <h2 class="md:hidden sm:flex lg:hidden flex text-start  text-2xl md:text-[48px] font-[800] mb-6 text-[#415471]">
+        Начни свое путешествие отсюда!
+      </h2>
       <div class="flex flex-col lg:flex-row gap-6">
         <!-- Карточка 1 -->
         <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden w-full lg:w-1/2 md:h-[200px]">
@@ -409,18 +399,10 @@
             
                       </div>
       
-          <div class="relative flex items-center sm:w-full ">
-            <!-- Контейнер для отзывов с горизонтальным скроллом -->
-           
-
-
-
-        <div class="flex flex-wrap md:gap-6 sm:gap-10 w-full   md:justify-center sm:justify-between scrollbar-hide">
-          
-      
+          <div class="relative flex items-center sm:w-full ">          
+            <div class="flex flex-wrap md:gap-6 sm:gap-10 w-full   md:justify-center sm:justify-center scrollbar-hide">
           <!-- Отзыв 1 -->
-    
-              <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[40%] lg:w-[40%]">
+              <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[48%] lg:w-[30%]">
                 <img class="w-1/2 md:w-1/3 h-full md:rounded-3xl  rounded-xl object-cover" src="./assets/where/rybalka.png" alt="Отзыв 2" />
               <div class="flex flex-col justify-between w-full">
                   <div class="flex text-yellow-400">
@@ -459,7 +441,7 @@
               </div>
           </div>
       <!--  -->
-      <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-3 w-full sm:w-[45%] md:w-[40%] lg:w-[40%]">
+      <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-3 w-full sm:w-[45%] md:w-[48%] lg:w-[30%]">
         <img class="w-1/2 md:w-1/3 h-full md:rounded-3xl  rounded-xl object-cover" src="./assets/where/rybalka.png" alt="Отзыв 2" />
       <div class="flex flex-col justify-between w-full">
           <div class="flex text-yellow-400">
@@ -497,7 +479,7 @@
       </div>
   </div>
   <!--  -->
-  <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[40%] lg:w-[40%]">
+  <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[48%] lg:w-[30%]">
     <img class="w-1/2 md:w-1/3 h-full md:rounded-3xl  rounded-xl object-cover" src="./assets/where/rybalka.png" alt="Отзыв 2" />
   <div class="flex flex-col justify-between w-full">
       <div class="flex text-yellow-400">
@@ -803,7 +785,7 @@
      // Генерация кнопок
      filterItems.forEach(text => {
          const button = document.createElement("button");
-         button.className = "bg-[#3C5574] px-3 py-1.5 rounded-full text-white text-sm font-medium transition-all whitespace-nowrap";
+         button.className = "bg-[#3C5574] px-3 py-1.5 rounded-full text-white text-sm font-medium transition-all whitespace-nowrap hover:bg-[#2e3a46] transition-all  hover:shadow-lg";
          button.textContent = text;
          filtersContainer.appendChild(button);
      });
