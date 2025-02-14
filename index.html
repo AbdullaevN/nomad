@@ -160,20 +160,17 @@
       <li><a href="#" class="block py-2 hover:text-blue-400 hover:translate-x-2 transition-all duration-300">Отзывы</a></li>
   </ul>
     <div class="flex gap-4 text-start mx-10 ">
-      <!-- Кнопка Войти -->
-      <button class="bg-white border border-gray-300 text-gray-800 px-4 py-1 rounded-lg font-sm text-sm">
+       <button class="bg-white border border-gray-300 text-gray-800 px-4 py-1 rounded-lg font-sm text-sm">
           <a href="./pages/signIn.html">Войти</a>
       </button>
   
        <button class="flex justify-between">
         <div class="flex items-center gap-2 border border-gray-300 rounded-lg px-3 py-1 bg-white cursor-pointer">
-          <!-- Иконка глобуса -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M22 12C22 17.5228 17.5228 22 12 22M22 12C22 6.47715 17.5228 2 12 2M22 12H2M12 22C6.47715 22 2 17.5228 2 12M12 22C9.43223 19.3038 8 15.7233 8 12C8 8.27674 9.43223 4.69615 12 2M12 22C14.5678 19.3038 16 15.7233 16 12C16 8.27674 14.5678 4.69615 12 2M2 12C2 6.47715 6.47715 2 12 2" stroke="#3C5574" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
       
-          <!-- Выбранный язык -->
-          <select class="appearance-none bg-transparent text-gray-800 font-base text-base cursor-pointer outline-none">
+           <select class="appearance-none bg-transparent text-gray-800 font-base text-base cursor-pointer outline-none">
               <option>RU</option>
               <option>EN</option>
               <option>KG</option>
@@ -195,86 +192,68 @@
  
 
 
-  <div class="map-container relative flex flex-col items-center">
-    <!-- Секция с фильтрами -->
-    <div class="absolute flex flex-col md:flex-row top-6 bg-[#ECEEF1] rounded-xl md:rounded-full p-4 flex items-center gap-4 w-full md:w-[70%] lg:w-auto z-50">
-      <!-- Поиск -->
-       <!-- <div class="flex bg-white rounded-3xl items-center gap-2 px-4 py-2 w-full md:w-44"> -->
-       <div class="flex bg-white rounded-3xl items-center gap-2 px-4 py-2 w-full md:w-80">
-           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M21 21L16.7 16.7M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <input type="search" class="w-full text-sm placeholder:text-[#AAAAAA] focus:outline-none leading-none" placeholder="Что вы хотите увидеть?" />
-      </div>
-  
-      <!-- Контейнер фильтров -->
-      <div class="flex items-center gap-2 w-full md:w-auto overflow-hidden">
-          <!-- Кнопка назад -->
-          <button id="scrollLeft" class="hidden md:flex bg-[#3C5574] rounded-full h-9 w-9 justify-center items-center hover:bg-[#2a3a51] transition-colors">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#F9FAFB]">
-                  <path d="M12 19L5 12M5 12L12 5M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </button>
-  
-          <!-- Фильтры -->
-<!-- <<<<<<< HEAD
-          <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full px-2">
-            
-            ======= -->
-            <!-- <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full px-2"></div> -->
-            
-                        <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full max-w-[80vw] md:max-w-[65vw] lg:max-w-[60vw] px-2">
-                      </div>
-   
-          <!-- Кнопка вперед -->
-          <button id="scrollRight" class="hidden md:flex bg-[#3C5574] rounded-full h-8 w-8 p-1 justify-center items-center hover:bg-[#2a3a51] transition-colors">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#F9FAFB]">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </button>
-      </div>
-  </div>
-  
+<div class="map-container relative flex flex-col items-center">
+  <!-- Секция с фильтрами -->
+  <div class="absolute flex flex-col md:flex-row top-6 bg-[#ECEEF1] rounded-xl md:rounded-full p-4 flex items-center gap-4 w-full md:w-[70%] lg:w-auto z-50">
+    <!-- Поиск -->
+     <div class="flex bg-white rounded-3xl items-center gap-2 px-4 py-2 w-full md:w-80">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M21 21L16.7 16.7M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="search" class="w-full text-sm placeholder:text-[#AAAAAA] focus:outline-none leading-none" placeholder="Что вы хотите увидеть?" />
+    </div>
 
-   
-         <div class="map-area w-full h-full relative z-0">
+    <!-- Контейнер фильтров -->
+    <div class="flex items-center gap-2 w-full md:w-auto overflow-hidden">
+        <!-- Кнопка назад -->
+        <button id="scrollLeft" class="hidden md:flex bg-[#3C5574] rounded-full h-9 w-9 justify-center items-center hover:bg-[#2a3a51] transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#F9FAFB]">
+                <path d="M12 19L5 12M5 12L12 5M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <!-- Фильтры -->
+        <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full max-w-[80vw] md:max-w-[65vw] lg:max-w-[60vw] px-2">
+        </div>
  
-         <div id="map" class="map-container w-full h-full rounded-xl"></div>
+        <!-- Кнопка вперед -->
+        <button id="scrollRight" class="hidden md:flex bg-[#3C5574] rounded-full h-8 w-8 p-1 justify-center items-center hover:bg-[#2a3a51] transition-colors">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#F9FAFB]">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+  </div>
+
+  <!-- Карта -->
+  <div class="map-area w-full h-full relative z-0 flex-1">
+      <div id="map" class="w-full h-full rounded-xl"></div>
+  </div>
+
+  <!-- Кнопки управления картой -->
+  <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pb-22 px-3 rounded-lg">
+      <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 2.5L14.4167 4.41667L12.0083 6.80833L13.1917 7.99167L15.5833 5.58333L17.5 7.5V2.5H12.5ZM2.5 7.5L4.41667 5.58333L6.80833 7.99167L7.99167 6.80833L5.58333 4.41667L7.5 2.5H2.5V7.5ZM7.5 17.5L5.58333 15.5833L7.99167 13.1917L6.80833 12.0083L4.41667 14.4167L2.5 12.5V17.5H7.5ZM17.5 12.5L15.5833 14.4167L13.1917 12.0083L12.0083 13.1917L14.4167 15.5833L12.5 17.5H17.5V12.5Z" fill="white"/>
+          </svg>
+      </button>
       
-  
-
-
-     <!-- Контейнер кнопок управления -->
-<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end  pb-22 px-3 rounded-lg  ">
-
-  <!-- Левая кнопка (увеличение) -->
-  <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.5 2.5L14.4167 4.41667L12.0083 6.80833L13.1917 7.99167L15.5833 5.58333L17.5 7.5V2.5H12.5ZM2.5 7.5L4.41667 5.58333L6.80833 7.99167L7.99167 6.80833L5.58333 4.41667L7.5 2.5H2.5V7.5ZM7.5 17.5L5.58333 15.5833L7.99167 13.1917L6.80833 12.0083L4.41667 14.4167L2.5 12.5V17.5H7.5ZM17.5 12.5L15.5833 14.4167L13.1917 12.0083L12.0083 13.1917L14.4167 15.5833L12.5 17.5H17.5V12.5Z" fill="white"/>
-      </svg>
-  </button>
-
-   <div class="flex gap-2 flex-col">
-      <!-- Кнопка плюс -->
-      <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10.0001 4.16669V15.8334M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </button>
-
-      <!-- Кнопка минус -->
-      <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </button>
+      <div class="flex gap-2 flex-col">
+          <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.0001 4.16669V15.8334M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </button>
+          
+          <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </button>
+      </div>
   </div>
-
 </div>
 
-  </div>
-  
-</div>
     
     
 
@@ -286,15 +265,13 @@
       <div
         class="hidden md:flex sm:flex flex-col lg:flex-row bg-white rounded-2xl shadow-[0px_0px_6px_8px_rgba(0,_0,_0,_0.1)] overflow-hidden sm:h-auto h-88"
       >
-        <!-- Фото слева -->
-        <img
+         <img
           src="./assets/main1.png"
           alt="Зимняя рыбалка"
           class="md:w-[100%] lg:w-1/2 sm:w-[100%] h-auto object-cover rounded-2xl sm:h-[25rem]"
         />
 
-        <!-- Контент справа -->
-        <div
+         <div
           class="w-full lg:w-1/2 flex flex-col justify-center p-6 text-center"
         >
          <a href="./pages/item.html">
@@ -312,7 +289,7 @@
 
           <div class="flex justify-between gap-4">
             <button
-              class="bg-[#F1F6FF] text-[#313F55] px-6 py-3 rounded-lg shadow-md"
+              class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-md hover:shadow-xl hover:bg-[#3B4C66] hover:text-white transition-all duration-300"
             >
               Подробнее
             </button>
@@ -334,7 +311,7 @@
           <img
             src="./assets/main1.png"
             alt="Зимняя рыбалка"
-            class="md:w-2/5 h-48 sm:w-2/4 md:h-auto object-cover rounded-2xl "
+            class="md:w-2/5 h-48 sm:w-full md:h-auto object-cover rounded-2xl "
           />
     
           <div class="w-full md:w-full  flex flex-col justify-center text-center p-5">
@@ -346,7 +323,11 @@
             </p>
             <hr class="bg-gray-300 h-0.5 w-full mx-auto mb-4" />
             <div class="flex justify-between gap-4 items-center">
-              <button class="bg-gray-200 text-gray-800 text-sm px-3 py-2 rounded-lg shadow-md">
+              <button 
+              class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-md hover:shadow-xl hover:bg-[#3B4C66] hover:text-white transition-all duration-300"
+              >
+                
+                
                 Подробнее
               </button>
               <span class="text-gray-500 text-sm">Детали</span>
@@ -354,12 +335,11 @@
           </div>
         </div>
     
-        <!-- Карточка 2 -->
-        <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden w-full lg:w-1/2 md:h-[200px]">
+         <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden w-full lg:w-1/2 md:h-[200px]">
           <img
             src="./assets/main1.png"
             alt="Зимняя рыбалка"
-            class="md:w-2/5 h-48 sm:w-2/4 md:h-auto object-cover rounded-2xl "
+            class="md:w-2/5 h-48 sm:w-full md:h-auto object-cover rounded-2xl "
           />
     
           <div class="w-full md:w-full  flex flex-col justify-center text-center p-5">
@@ -371,7 +351,9 @@
             </p>
             <hr class="bg-gray-300 h-0.5 w-full mx-auto mb-4" />
             <div class="flex justify-between gap-4 items-center">
-              <button class="bg-gray-200 text-gray-800 text-sm px-3 py-2 rounded-lg shadow-md">
+              <button
+              class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-md hover:shadow-xl hover:bg-[#3B4C66] hover:text-white transition-all duration-300"
+              >
                 Подробнее
               </button>
               <span class="text-gray-500 text-sm">Детали</span>
@@ -386,9 +368,10 @@
       <div class="flex justify-between md:py-10 items-center text-center">
         <h2 class="hidden md:flex text-[#415471] text-4xl font-bold">Смотрите еще</h2>
 
-        <button class="hidden md:flex bg-[#415471] text-white text-lg py-3 px-28 rounded-2xl">
+        <button class="hidden md:flex bg-[#415471] text-white text-lg py-3 px-28 rounded-2xl shadow-2xl hover:bg-[#2e3a46] hover:text-[#fff] transition duration-300 ease-in-out">
           Посмотреть
         </button>
+        
       </div>
       <div
         id="cardsGrid"
@@ -400,9 +383,13 @@
 
 
       <section class="md:hidden flex justify-center items-center pb-14">
-      <button class="bg-[#415471] text-white text-lg py-3 px-28 rounded-2xl">
-        Посмотреть
-      </button>
+        <button class="bg-[#415471] text-white text-lg py-3 px-28 rounded-2xl shadow-2xl transition duration-300 ease-in-out 
+        hover:bg-[#1E2A35] hover:shadow-4xl hover:scale-105 hover:text-yellow-300">
+Посмотреть
+</button>
+
+
+
     </section>
 
 
@@ -412,12 +399,15 @@
     <section class=" bg-[#3C5574] mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class=" container mx-auto">
        
-          <div class="flex  text-center items-center items-baseline flex-wrap py-5">
+          <div class="flex  text-center items-center flex-wrap  items-baseline flex-wrap py-5">
             <h2 class=" text-white text-3xl font-bold text-start mb-6 md:px-12">
               Отзывы о наших маршрутах
             </h2>
-            <button class="bg-white px-3 py-2 rounded-xl text-sm">Смотреть все отзывы</button>
-          </div>
+            <button class="bg-white px-3 py-2 rounded-xl text-sm text-[#415471] hover:bg-[#2e3a46] hover:text-[#fff] transition duration-300 ease-in-out">
+              Смотреть все отзывы
+            </button>
+            
+                      </div>
       
           <div class="relative flex items-center sm:w-full ">
             <!-- Контейнер для отзывов с горизонтальным скроллом -->
@@ -425,12 +415,12 @@
 
 
 
-        <div class="flex flex-wrap gap-6 w-full justify-center scrollbar-hide">
+        <div class="flex flex-wrap md:gap-6 sm:gap-10 w-full   md:justify-center sm:justify-between scrollbar-hide">
           
       
           <!-- Отзыв 1 -->
     
-              <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[40%] lg:w-[30%]">
+              <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[40%] lg:w-[40%]">
                 <img class="w-1/2 md:w-1/3 h-full md:rounded-3xl  rounded-xl object-cover" src="./assets/where/rybalka.png" alt="Отзыв 2" />
               <div class="flex flex-col justify-between w-full">
                   <div class="flex text-yellow-400">
@@ -461,7 +451,7 @@
                   </p>
       
                   <div class="flex items-center mt-4">
-                      <!-- <img class="md:w-10 md:h-10 w-5 h-5 rounded-full bg-[#F1F3F7] object-contain md:object-cover" src="./assets/profile.png" alt="Автор отзыва" /> -->
+                       
                       <img class="w-8 h-8 md:w-9 md:h-10 rounded-full bg-[#F1F3F7] object-contain p-3" src="./assets/profile.png" alt="Автор отзыва" />
 
                       <span class="ml-3 flex text-[12px] font-semibold text-gray-800">Дмитрий Иванов</span>
@@ -469,7 +459,7 @@
               </div>
           </div>
       <!--  -->
-      <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-3 w-full sm:w-[45%] md:w-[40%] lg:w-[30%]">
+      <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-3 w-full sm:w-[45%] md:w-[40%] lg:w-[40%]">
         <img class="w-1/2 md:w-1/3 h-full md:rounded-3xl  rounded-xl object-cover" src="./assets/where/rybalka.png" alt="Отзыв 2" />
       <div class="flex flex-col justify-between w-full">
           <div class="flex text-yellow-400">
@@ -507,7 +497,7 @@
       </div>
   </div>
   <!--  -->
-  <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[40%] lg:w-[30%]">
+  <div class="bg-white md:rounded-4xl rounded-2xl md:p-3 p-2 shadow-lg flex gap-4 w-full sm:w-[45%] md:w-[40%] lg:w-[40%]">
     <img class="w-1/2 md:w-1/3 h-full md:rounded-3xl  rounded-xl object-cover" src="./assets/where/rybalka.png" alt="Отзыв 2" />
   <div class="flex flex-col justify-between w-full">
       <div class="flex text-yellow-400">
@@ -545,13 +535,7 @@
 </div>
        
       </div>
-             <!-- <button
-              class="
-              hidden md:flex
-              absolute right-[-10px] md:right-[-19px] h-10 w-10 bg-white p-3 flex justify-center items-center rounded-full shadow-md hover:bg-gray-100 transition"
-            >
-              <img src="./assets/where/right.svg" alt="" />
-            </button> -->
+            
           </div>
         </div>
       </section>
@@ -785,7 +769,9 @@
         <p class="text-gray-600 mb-4 truncate" style="max-height: 5rem; overflow: hidden; text-overflow: ellipsis;">${card.description}</p>
         <hr class="bg-[#9CA3AF] h-0.5  mx-auto mb-4"> 
         <div class="flex justify-between items-center">
-            <button class="bg-[#F3F4F6] text-[#3B4C66]  px-4 py-2 rounded-lg shadow-md">${card.buttonText}</button>
+             <button class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-md hover:shadow-xl hover:bg-[#3B4C66] hover:text-white transition-all duration-300">
+                ${card.buttonText}
+            </button>
             <span class="md:text-auto text-sm text-gray-500">${card.date}</span>
         </div>
     </div>

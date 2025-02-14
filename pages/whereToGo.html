@@ -154,17 +154,20 @@
         <div id="cardsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
     </section>
     
-    <!-- Pagination -->
-    <section class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center py-10 nunito-sans">
-        <div class="flex items-center space-x-3">
-            <button class="w-10 h-10 bg-[#3B4C66] rounded-full text-white font-bold shadow-md">1</button>
-            <button class="w-10 h-10 bg-white rounded-full text-gray-800 font-bold shadow-md">2</button>
-            <button class="w-10 h-10 bg-white rounded-full text-gray-800 font-bold shadow-md">3</button>
-            <button class="w-10 h-10 bg-white rounded-full flex justify-center items-center shadow-md">
-                <img src="../assets/where/right.svg" alt="">
-            </button>
-        </div>
-    </section>
+<!-- Pagination -->
+<section class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center py-10 nunito-sans">
+  <div class="flex items-center space-x-3">
+      <button class="w-10 h-10 bg-[#3B4C66] rounded-full text-white font-bold shadow-md hover:shadow-2xl hover:scale-110 transition-all duration-300">1</button>
+      <button class="w-10 h-10 bg-white rounded-full text-gray-800 font-bold shadow-md hover:shadow-2xl hover:scale-110 transition-all duration-300">2</button>
+      <button class="w-10 h-10 bg-white rounded-full text-gray-800 font-bold shadow-md hover:shadow-2xl hover:scale-110 transition-all duration-300">3</button>
+      <button class="w-10 h-10 bg-white rounded-full flex justify-center items-center shadow-md hover:shadow-2xl hover:scale-110 transition-all duration-300">
+          <img src="../assets/where/right.svg" alt="">
+      </button>
+  </div>
+</section>
+
+
+
     
     <!-- Footer -->
     <footer class="bg-[#3C5574] text-white py-6 text-center">
@@ -335,13 +338,16 @@
     <div class="p-4">
         <h3 class="text-lg sm:text-xl font-semibold mb-2">${truncateTitle(card.title, 3.4)}</h3>
         <p class="card-description text-gray-600 text-sm sm:text-base mb-3">${card.description}</p>
-        <hr class="bg-gray-300 h-0.5  mx-auto mb-3">
+        <hr class="bg-gray-300 h-0.5 mx-auto mb-3">
         <div class="flex justify-between items-center">
-            <button class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-sm">${card.buttonText}</button>
+            <button class="bg-gray-200 text-[#3B4C66] px-3 py-1 rounded-lg shadow-md hover:shadow-xl hover:bg-[#3B4C66] hover:text-white transition-all duration-300">
+                ${card.buttonText}
+            </button>
             <span class="text-gray-500 text-sm">${card.date}</span>
         </div>
     </div>
 `;
+
 
             cardsGrid.appendChild(cardElement);
         });
