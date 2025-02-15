@@ -148,7 +148,7 @@
       
         <!-- Image Section -->
         <div class="w-full md:w-1/2">
-         <div id="map" class="map-container w-full h-full rounded-xl"></div>
+         <div id="map" class="map-container w-full h-full rounded-xl z-0"></div>
 
           <!-- <img src="../assets/1.png" alt="Image" class="w-full h-full rounded-xl shadow-lg object-cover"> -->
         </div>
@@ -158,11 +158,13 @@
 
 
 
+   
+
     <section class="container mx-auto px-4 py-10 sm:px-6 lg:px-8">
       <div class="flex flex-col gap-8">
         <!-- Большое изображение -->
         <div class="w-full">
-          <img src="../assets/item/big.png" alt="Big Image" class="w-full h-auto object-cover rounded-lg">
+          <img src="../assets/item/big.png" alt="Big Image" id="mainImage" class="w-full h-auto object-contain rounded-lg">
         </div>
         <!-- Меньшие изображения с кнопками -->
         <div class="flex items-center gap-4">
@@ -175,10 +177,10 @@
       
           <!-- Контейнер изображений -->
           <div id="imageContainer" class="flex gap-4 w-full overflow-x-auto scroll-smooth scrollbar-hidden">
-              <img src="../assets/item/small1.png" alt="Thumbnail 1" class="w-auto h-auto object-cover rounded-lg shadow-md">
-              <img src="../assets/item/small2.png" alt="Thumbnail 2" class="w-auto h-auto object-cover rounded-lg shadow-md">
-              <img src="../assets/item/small2.png" alt="Thumbnail 3" class="w-auto h-auto object-cover rounded-lg shadow-md">
-              <img src="../assets/item/small2.png" alt="Thumbnail 4" class="w-auto h-auto object-cover rounded-lg shadow-md">
+              <img src="../assets/item/small1.png" alt="Thumbnail 1" class="thumbnail w-auto h-auto object-cover rounded-lg shadow-md">
+              <img src="../assets/item/small2.png" alt="Thumbnail 2" class="thumbnail w-auto h-auto object-cover rounded-lg shadow-md">
+              <img src="../assets/item/small2.png" alt="Thumbnail 3" class="thumbnail w-auto h-auto object-cover rounded-lg shadow-md">
+              <img src="../assets/item/small2.png" alt="Thumbnail 4" class="thumbnail w-auto h-auto object-cover rounded-lg shadow-md">
           </div>
       
           <!-- Кнопка для прокрутки вправо -->
@@ -710,6 +712,19 @@ cards.forEach(card => {
       scrollRight.addEventListener("click", function () {
           container.scrollBy({ left: scrollAmount, behavior: "smooth" });
       });
+  });
+
+
+  // 
+   document.addEventListener("DOMContentLoaded", function () {
+    const mainImage = document.getElementById("mainImage");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener("click", function () {
+        mainImage.src = this.src;
+      });
+    });
   });
 </script>
 
