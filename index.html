@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starter Template</title>
 
-    <!-- Tailwind CSS via CDN (for development only) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 
     <link rel="stylesheet" href="./css/app.css" />
@@ -16,13 +15,14 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/leaflet.fullscreen.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Leaflet.fullscreen.min.js"></script>
 
-  
-
-
-    <!-- Подключаем Leaflet -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   </head>
 
@@ -66,25 +66,10 @@
   }
 }
   </style>
-  
-  
-  
-   </style>
-  
-  
- 
 
-
-
- 
 
   <body class=" h-full relative bg-section">
-  
-
-
-
-
-
+ 
     <div class="hero-section ">
        <div class="hero-bg"></div>
  
@@ -114,8 +99,7 @@
      </div>
   </div>
 
-  <!-- Основной контент (без изменений) -->
-  <main class="bg-[#3C5574]">
+   <main class="bg-[#3C5574]">
       <section class=" mx-auto px-12 md:px-14 py-20">
           <p class="text-white  text-xl  md:text-[33px] text-start">
               <strong>Nomad.kg</strong> — это уникальный некоммерческий проект для
@@ -180,31 +164,25 @@
 
 
 <div class="map-container relative flex flex-col items-center">
-  <!-- Секция с фильтрами -->
-  <div class="absolute flex flex-col md:flex-row top-6 bg-[#ECEEF1] rounded-xl md:rounded-full p-4 flex items-center gap-4 w-full md:w-[70%] lg:w-auto z-50">
-    <!-- Поиск -->
-     <div class="flex bg-white rounded-3xl items-center gap-2 px-4 py-2 w-full md:w-80">
+   <div class="absolute flex flex-col md:flex-row top-6 bg-[#ECEEF1] rounded-xl md:rounded-full p-4 flex items-center gap-4 w-full md:w-[70%] lg:w-auto z-50">
+      <div class="flex bg-white rounded-3xl items-center gap-2 px-4 py-2 w-full md:w-80">
          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M21 21L16.7 16.7M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="#AAAAAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <input type="search" class="w-full text-sm placeholder:text-[#AAAAAA] focus:outline-none leading-none" placeholder="Что вы хотите увидеть?" />
     </div>
 
-    <!-- Контейнер фильтров -->
-    <div class="flex items-center gap-2 w-full md:w-auto overflow-hidden">
-        <!-- Кнопка назад -->
-        <button id="scrollLeft" class="hidden md:flex bg-[#3C5574] rounded-full h-9 w-9 justify-center items-center hover:bg-[#2a3a51] transition-colors">
+     <div class="flex items-center gap-2 w-full md:w-auto overflow-hidden">
+         <button id="scrollLeft" class="hidden md:flex bg-[#3C5574] rounded-full h-9 w-9 justify-center items-center hover:bg-[#2a3a51] transition-colors">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#F9FAFB]">
                 <path d="M12 19L5 12M5 12L12 5M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </button>
 
-        <!-- Фильтры -->
-        <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full max-w-[80vw] md:max-w-[65vw] lg:max-w-[60vw] px-2 ">
+         <div id="filtersContainer" class="flex gap-2 md:gap-4 flex-nowrap overflow-x-auto scroll-smooth scrollbar-hidden w-full max-w-[80vw] md:max-w-[65vw] lg:max-w-[60vw] px-2 ">
         </div>
  
-        <!-- Кнопка вперед -->
-        <button id="scrollRight" class="hidden md:flex bg-[#3C5574] rounded-full h-8 w-8 p-1 justify-center items-center hover:bg-[#2a3a51] transition-colors">
+         <button id="scrollRight" class="hidden md:flex bg-[#3C5574] rounded-full h-8 w-8 p-1 justify-center items-center hover:bg-[#2a3a51] transition-colors">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-[#F9FAFB]">
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -212,37 +190,72 @@
     </div>
   </div>
 
-  <!-- Карта -->
-  <div class="map-area w-full h-full relative z-0 flex-1">
-      <div id="map" class="w-full h-full rounded-xl"></div>
-  </div>
+ 
 
-  <!-- Кнопки управления картой -->
+     <div class="map-area w-full h-full relative z-0 flex-1">
+        <div id="map" class="w-full h-full rounded-xl"></div>
+    </div>
+
   <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pb-22 px-3 rounded-lg">
-      <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.5 2.5L14.4167 4.41667L12.0083 6.80833L13.1917 7.99167L15.5833 5.58333L17.5 7.5V2.5H12.5ZM2.5 7.5L4.41667 5.58333L6.80833 7.99167L7.99167 6.80833L5.58333 4.41667L7.5 2.5H2.5V7.5ZM7.5 17.5L5.58333 15.5833L7.99167 13.1917L6.80833 12.0083L4.41667 14.4167L2.5 12.5V17.5H7.5ZM17.5 12.5L15.5833 14.4167L13.1917 12.0083L12.0083 13.1917L14.4167 15.5833L12.5 17.5H17.5V12.5Z" fill="white"/>
-          </svg>
-      </button>
-      
-      <div class="flex gap-2 flex-col">
-          <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.0001 4.16669V15.8334M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </button>
-          
-          <button class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-          </button>
-      </div>
-  </div>
+     <button id="fullscreen-btn" class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 2.5L14.4167 4.41667L12.0083 6.80833L13.1917 7.99167L15.5833 5.58333L17.5 7.5V2.5H12.5ZM2.5 7.5L4.4167 5.58333L6.80833 7.99167L7.99167 6.80833L5.58333 4.41667L7.5 2.5H2.5V7.5ZM7.5 17.5L5.58333 15.5833L7.99167 13.1917L6.80833 12.0083L4.41667 14.4167L2.5 12.5V17.5H7.5ZM17.5 12.5L15.5833 14.4167L13.1917 12.0083L12.0083 13.1917L14.4167 15.5833L12.5 17.5H17.5V12.5Z" fill="white"/>
+        </svg>
+    </button>
+
+    <div class="flex gap-2 flex-col">
+         <button id="zoom-in" class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.0001 4.16669V15.8334M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button id="zoom-out" class="bg-[#616161] p-2 rounded-md hover:bg-[#2a3a51] transition">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.16675 10H15.8334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
 </div>
 
-    
-    
+
+ <div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+  <div class="bg-white p-6 rounded-2xl shadow-lg w-80">
+     <div class="flex justify-between items-center">
+      <h2 id="modal-title" class="text-2xl font-bold "></h2>
+      <button  id="closeModalBtn" onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+        <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+     <img id="modal-image" src="" alt="Сары-Челек" class="w-full h-38 object-cover rounded-lg my-4">
+
+     <div class="flex justify-between gap-4 mb-4 text-[#6C6C6C]">
+      <div class="flex flex-col items-center">
+        <p id="modal-info" class="text-sm text-center border border-[#EEEEEE] rounded-full p-1">Эко туризм</p>
+
+      </div>
+      <div class="flex flex-col items-center">
+        <p id="modal-route" class="text-sm text-center border border-[#EEEEEE] rounded-full p-1">Информация о том, как добраться до места.</p>
+      </div>
+    </div>
+
+     <p id="modal-description" class="text-sm text-[#6D758F] mb-4 truncate-text">
+      Подробное описание места, истории и достопримечательностей вокруг.
+    </p>
+
+     <button onclick="viewRoute()" class="w-2/3 bg-[#D4D4D4] p-2 rounded-lg  text-sm flex items-center justify-center gap-2">
+      Посмотреть маршрут
+      <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.38452 0.880798L9.69988 5.00001L5.38452 9.11922" stroke="#1F2937" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9.7 5L1.30005 5" stroke="#1F2937" stroke-width="1.28571" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        
+    </button>
+  </div>
+</div>
 
     <section class="hidden md:block container mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <h2 class="flex text-start  text-2xl md:text-[37px] font-[800] mb-6 text-[#415471]">
@@ -285,11 +298,6 @@
         </div>
       </div>
     </section>
-
-
-  
-
-
 
     <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-5">
       <h2 class="md:hidden sm:flex lg:hidden flex text-start  text-2xl md:text-[48px] font-[800] mb-6 text-[#415471]">
@@ -645,20 +653,7 @@
 </footer>
 
 
-
-
-
-
-
-
-
-
-
-
-
  
-
-
  
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -821,36 +816,100 @@
      checkScroll();
  });
  </script>
- 
-
- 
-
 
 <script>
-   // Координаты Бишкека [широта, долгота]
-  const bishkekCoords = [42.8746, 74.5698];
-  const initialZoom = 12;
+  document.addEventListener("DOMContentLoaded", function () {
+     const kyrgyzstanCenter = [41.64, 75.01];
+    const initialZoom = 6;   
+     const places = [
+      {
+        name: "Сары-Челек",
+        coords: [41.8935, 71.9596], 
+        description: "Эко туризм",
+        imageUrl: "https://sputnik.kg/img/104502/71/1045027139_0:72:1368:841_1920x0_80_0_0_f5467c464ab24413d814e31e315808ed.jpg",  
+        routeInfo: "Природный заповедник",
+        longDescription: "Сары-Челек — озеро, расположенное в высокогорьях, омываемое кристально чистыми водами. Оно является природным памятником и популярным туристическим направлением.",
+      },
+      {
+        name: "Гора Айгуль-Таш",
+        coords: [39.9639, 70.9078], 
+        description: "Эко туризм",
+        imageUrl:"./assets/aygul.png",
+        routeInfo: "Природный заповедник",
+        longDescription: "Главным символом Баткена, не считая вкуснейших баткенских абрикосов, является цветок Айгуль – таково кыргызское название цветка рябчик Эдуарда. По данным Национальной академии наук, это эндемичное растение встречается только в Баткенской области вдоль Туркестанских горных хребтов и поэтому включено в Красную книгу Кыргызстана. Еще интереснее то, что цветок айгуль растет только на крутом склоне скалистой горы Айгуль-Таш недалеко от села Кара-Булак.",
+      },
+    ];
 
-  // Инициализация карты
-  const map = L.map('map').setView(bishkekCoords, initialZoom);
+     const mapElement = document.getElementById("map");
+    if (!mapElement) {
+      console.error("Ошибка: элемент с id 'map' не найден!");
+      return;
+    }
 
-  // Выберите один из стилей:
-  
-  // 1. Стиль Voyager (CartoDB)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    maxZoom: 19,
-    subdomains: 'abcd',
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-  }).addTo(map);
+    //  const map = L.map("map",{zoomControl:false}).setView(kyrgyzstanCenter, initialZoom);
+    
+    const map = L.map('map', {
+    zoomControl: false, 
+    fullscreenControl: true, 
+    fullscreenControlOptions: { position: 'topright' }  
+}).setView([42.8746, 74.5698], 7);  
 
- 
 
-  // Добавляем маркер центра Бишкека
-  L.marker(bishkekCoords)
-    .addTo(map)
-    .bindPopup('<b>Бишкек</b><br>Столица Кыргызстана')
-    .openPopup();
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  maxZoom: 19,
+  subdomains: 'abcd',
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+}).addTo(map);
+
+
+     places.forEach(place => {
+      const marker = L.marker(place.coords).addTo(map);
+      marker.bindPopup(`<b>${place.name}</b><br>${place.description}`);
+
+       marker.on('click', function () {
+        openModal(place);
+      });
+    });
+
+     function openModal(place) {
+       document.getElementById("modal-title").textContent = place.name;
+      document.getElementById("modal-description").textContent = place.longDescription;
+      document.getElementById("modal-image").src = place.imageUrl; 
+      document.getElementById("modal-info").textContent = place.description;
+      document.getElementById("modal-route").textContent = place.routeInfo;
+
+      document.getElementById("modal").classList.remove("hidden");
+    }
+///////////
+      const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+     zoomInBtn.addEventListener('click', () => map.zoomIn());
+    zoomOutBtn.addEventListener('click', () => map.zoomOut());
+    
+     fullscreenBtn.addEventListener('click', () => map.toggleFullscreen());
+    // ////////
+
+    const closeModalBtn = document.getElementById("closeModalBtn");
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener("click", closeModal);
+} else {
+  console.error("Ошибка: кнопка закрытия с id 'closeModalBtn' не найдена!");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.add("hidden");
+}
+    document.getElementById("modal").addEventListener("click", function (event) {
+      if (event.target === this) {
+        closeModal();
+      }
+    });
+  });
 </script>
+
 
 <script src="./js/burger.js"></script>
   </body>
